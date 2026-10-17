@@ -14,3 +14,29 @@ body{background: linear-gradient(to bottom, white , black);height:100vh;} /*here
 #p1{text-align: center; color: rgb(11, 11, 35);font-size: 25px;margin: 15px;}
 #footr{margin-top: 10px;color: rgb(158, 214, 216);margin-left: 8px;}
 figcaption{text-align: center;color: lightsteelblue;font-style: oblique;text-shadow: 3px 3px 3px;}
+
+@media (max-width: 768px) {
+body { font-size: 14px; }
+}
+
+@media print {
+.menu, .btn-nav { display: none; }
+}
+@media (min-resolution: 2dppx){}
+@media (pointer: coarse) {
+button {
+padding: 15px 25px;
+}
+}
+@media (prefers-color-scheme: dark) {
+body { background-color: #121212; color: #ffffff; }
+}
+
+h1 {
+font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.hero {
+min-height: 100dvh;
+padding-top: env(safe-area-inset-top);
+}
