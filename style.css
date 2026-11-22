@@ -3,33 +3,47 @@ header{background-color: rgb(32, 54, 126);height: 80px;width: 100%;
 nav{background-color: rgb(32, 54, 126);height: 90px ;width: 100%;border-bottom-left-radius: 50%;
 border-bottom-right-radius: 50%;}
 *{margin: 0%;}
-a{display: inline;color: white;margin-right:20px ;;margin-left:20px ; font-style: italic;font-size: 20px;}
+a {
+  color: white;
+  margin: 0 12px;
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+}
 h1{font-family: fantasy; letter-spacing: 8px; text-align: center;
      padding-top: 10px;margin-bottom: 10px;font-size: 50px;text-shadow: 10px 10px 10px black;
     color: lightsteelblue;
     }
-div{width: 30%;margin: 20px;display: inline-block;height: 30%;}
+.card-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 16px;
+padding: 16px;
+}
 img{object-fit: cover;height: 100%;width: 100%;border-radius: 70px 0px 70px;}
-body{background: linear-gradient(to bottom, white , black);height:100vh;} /*here i used chat gpt to help me because the background linear gradient didnt work so chat told me to add 100vh */
+body{background: linear-gradient(to bottom, white , black);min-height:100vh;}
 #p1{text-align: center; color: rgb(11, 11, 35);font-size: 25px;margin: 15px;}
 #footr{margin-top: 10px;color: rgb(158, 214, 216);margin-left: 8px;}
 figcaption{text-align: center;color: lightsteelblue;font-style: oblique;text-shadow: 3px 3px 3px;}
 
-@media (max-width: 768px) {
-body { font-size: 14px; }
+
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media print {
-.menu, .btn-nav { display: none; }
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-@media (min-resolution: 2dppx){}
-@media (pointer: coarse) {
-button {
-padding: 15px 25px;
-}
-}
-@media (prefers-color-scheme: dark) {
-body { background-color: #121212; color: #ffffff; }
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  gap: 10px;
 }
 
 h1 {
